@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/gameboard"
-        android:rowCount="8"
-        android:columnCount="8" >
-    </GridLayout>
+        android:columnCount="8"
+        android:rowCount="8" />
+    
 
 </RelativeLayout>

@@ -12,11 +12,19 @@ public class GameActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
-		View v = new View(this);
-		v.setMinimumHeight(100);
-		v.setMinimumWidth(100);
-		v.setBackgroundColor(android.R.color.black);
-		GridLayout board = (GridLayout) getViewById(R.id.gameboard);
+		View v;
+		GridLayout board = (GridLayout) findViewById(R.id.gameboard);
+		for (int i = 0; i < 64; i++) {
+			v = new View(this);
+			v.setMinimumHeight(100);
+			v.setMinimumWidth(100);
+			if (i % 2 == 0)
+				v.setBackgroundColor(0x000000);
+			else
+				v.setBackgroundColor(0xFFFFFF);
+			board.addView(v);
+		}
+		
 	}
 
 	@Override
