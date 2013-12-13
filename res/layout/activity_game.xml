@@ -8,11 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".GameActivity" >
 
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gameboard"
-        android:numColumns="8" />
-    
+     <GridView
+                android:id="@+id/gameboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="8" />
 
 </RelativeLayout>
