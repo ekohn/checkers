@@ -449,7 +449,7 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
 	}
 
 	private boolean canScrollToEitherSide(final boolean onRightEdge, final boolean onLeftEdge) {
-		return (onLeftEdge && container.canScrollToPreviousPage()) || (onRightEdge && container.canScrollToNextPage());
+		return false;
 	}
 
 	private void scroll(boolean onRightEdge, boolean onLeftEdge) {
@@ -884,7 +884,7 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
 
 	private int acknowledgeHeightSize(int heightMode, int heightSize, Display display) {
 		if (heightMode == MeasureSpec.UNSPECIFIED) {
-			heightSize = display.getHeight();
+			heightSize = display.getWidth();
 		}
 		gridPageHeight = heightSize;
 		return heightSize;
@@ -1032,10 +1032,11 @@ public class DragDropGrid extends ViewGroup implements OnTouchListener, OnLongCl
 	private void createDeleteZone() {
 		deleteZone = new DeleteDropZoneView(getContext());
 		addView(deleteZone);
+		hideDeleteView();
 	}
 
 	private void hideDeleteView() {
-	    deleteZone.setVisibility(View.INVISIBLE);
+	    deleteZone.setVisibility(View.GONE);
 	}
 
 	private int positionForView(View v) {

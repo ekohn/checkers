@@ -90,28 +90,6 @@ public class PagedDragDropGrid extends HorizontalScrollView implements PagedCont
 	}
  
     public void initPagedScroll(){
-    	
-    	setScrollBarStyle(SCROLLBARS_INSIDE_OVERLAY);
-    	
-    	if (!isInEditMode()) {
-    	    gestureScanner = new GestureDetector(getContext(), this);
-    	}
-
-        setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                boolean specialEventUsed = gestureScanner.onTouchEvent(event);
-                if(!specialEventUsed && (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL)) {
-                    int scrollX = getScrollX();                    
-                    int onePageWidth = v.getMeasuredWidth();
-                    int page = ((scrollX + (onePageWidth/2))/onePageWidth);
-                    scrollToPage(page);
-                    return true;
-                } else {                    
-                    return specialEventUsed;
-                }
-            }
-        });
     }
     
     public void setAdapter(PagedDragDropGridAdapter adapter) {
@@ -139,26 +117,17 @@ public class PagedDragDropGrid extends HorizontalScrollView implements PagedCont
 
 	@Override
 	public void scrollToPage(int page) {
-		mActivePage = page;
-		int onePageWidth = getMeasuredWidth();
-		int scrollTo = page*onePageWidth;
-        smoothScrollTo(scrollTo, 0);
+
 	}
 
 	@Override
 	public void scrollLeft() {		
-		int newPage = mActivePage-1;
-		if (canScrollToPreviousPage()) {
-			scrollToPage(newPage);
-		}
+
 	}
 
 	@Override
 	public void scrollRight() {
-		int newPage = mActivePage+1;
-		if (canScrollToNextPage()) {		
-			scrollToPage(newPage);
-		}
+
 	}
 
 	@Override

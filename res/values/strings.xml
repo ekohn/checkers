@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PagedDragDropGrid</string>
+    <string name="app_name">Checkers</string>
     <string name="removeItem">Remove</string>
+    <string name="red">Red\'s Turn</string>
+    <string name="black">Black\'s Turn</string>
 </resources>

@@ -52,10 +52,9 @@ public class Item {
 	public void setDrawable(int drawable) {
 		this.drawable = drawable;
 	}
-	public Item(long id, String name, int drawable) {
+	public Item(long id, int drawable) {
 		super();
 		this.id = id;
-		this.name = name;
 		this.drawable = drawable;
 	}
 }

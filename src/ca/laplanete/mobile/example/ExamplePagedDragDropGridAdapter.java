@@ -64,9 +64,9 @@ public class ExamplePagedDragDropGridAdapter implements PagedDragDropGridAdapter
 		
 		Page page1 = new Page();
 		List<Item> items = new ArrayList<Item>();
-		items.add(new Item(1, "Item 1", R.drawable.ic_launcher));
-		items.add(new Item(2, "Item 2", R.drawable.ic_launcher));
-		items.add(new Item(3, "Item 3", R.drawable.ic_launcher));
+		items.add(new Item(1, R.drawable.ic_launcher));
+		items.add(new Item(2, R.drawable.ic_launcher));
+		items.add(new Item(3, R.drawable.ic_launcher));
 		page1.setItems(items);
 		pages.add(page1);
 		
